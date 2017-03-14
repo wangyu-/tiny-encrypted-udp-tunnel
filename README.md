@@ -20,11 +20,11 @@ has been stablely running for years on my server and router.
 linux x64 and mips_ar71xx binaries have already been built.
 
 # usage
-this program is essentially a port forwarder which allows you to use a key for encryption/decryption at either side.if you use a pair of this program,one at local host,the other at remote host,they provide a tunnel together
+this program is essentially a port forwarder which allows you to use a key for encryption/decryption at either side.if you use a pair of them,one at local host,the other at remote host,they form a tunnel together
 
 forward -l [adressA:]portA -r [adressB:]portB  [-a passwdA] [-b passwdB]
 
-after being started,this program will forward all packet received from adressA:portA to adressB:portB. and all packet received back from adressB:portB will be forward back to adressA:portA. it can handle multiple udp connection well.
+after being started,this program will forward all packet received from adressA:portA to adressB:portB. and all packet received back from adressB:portB will be forward back to adressA:portA. it can handle multiple udp connection.
 
 basic option:
 
@@ -76,7 +76,7 @@ dataflow:
 
 
 # method of encryption
-currently this program only use XOR for encrypting.mainly bc i use a mips_ar71xx router as client.router's cpu is weak,i personally need fast process speed.and XOR is enough for fooling the firewall i have encountered.
+currently this program only use XOR for encrypting.mainly bc i use a mips_ar71xx router as client.router's cpu is slow,i personally need fast processing speed.and XOR is enough for fooling the firewall i have encountered.
 
 nevertheless,you can easily integrate your own encrytion algotirhm into this program if you need stronger encryption.all you need to do is to rewrite 'void encrypt(char * input,int len,char *key)' and 'void decrypt(char * input,int len,char *key)'.
 
