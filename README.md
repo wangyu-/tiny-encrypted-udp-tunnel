@@ -20,7 +20,7 @@ has been stablely running for years on my server and router.
 linux x64 and mips_ar71xx binaries have already been built.
 
 # usage
-this program is essentially a port forwarder which allows you to use a key for encryption/decryption at either side.if you use a pair of them,one at local host,the other at remote host,they form a tunnel together
+this program is essentially a port forwarder which allows you to use a key for encryption/decryption at either side.if you use a pair of them,one at local host,the other at remote host,they form a tunnel together.
 
 forward -l [adressA:]portA -r [adressB:]portB  [-a passwdA] [-b passwdB]
 
