@@ -306,56 +306,6 @@ int main(int argc,char *argv[])
 	        		   }
 	        	   }
 	           }
-			/*
-			if(fork()==0)//子
-			{
-				if(keyb[0]) {recv_len+=16;encrypt(buf,recv_len,keyb);}
-				ret=send(remote_fd,buf,recv_len,0);
-				//printf("send return %d\n",ret);
-				while(1)
-				{
-					recv_len=recv(local_fd,buf,buf_len,0);
-					if(recv_len==-1)
-					{
-						printf("recv_len== -1 at line %d",__LINE__);
-						exit(1);
-					}
-					if(keya[0]) {decrypt(buf,recv_len,keya);recv_len-=16;}
-					buf[recv_len]=0;
-					printf("%s received from child@1\n",buf);
-					if(keyb[0]) {printf ("<keyb!=0>\n");recv_len+=16;encrypt(buf,recv_len,keyb);}
-					ret=send(remote_fd,buf,recv_len,0);
-					if(ret==-1)
-					{
-						printf("ret== -1 at line %d",__LINE__);
-						exit(1);
-					}
-					printf("send return %d @1\n",ret);
-				}
-			}else
-			{
-				while(1)
-				{
-					recv_len=recv(remote_fd,buf,buf_len,0);
-					if(recv_len==-1)
-					{
-						printf("recv_len== -1 at line %d",__LINE__);
-						exit(1);
-					}
-					if(keyb[0]) {decrypt(buf,recv_len,keyb);recv_len-=16;}
-					buf[recv_len]=0;
-					printf("%s received from child@2\n",buf);
-					if(keya[0]) {recv_len+=16;encrypt(buf,recv_len,keya);}
-					ret=send(local_fd,buf,recv_len,0);
-					if(ret==-1)
-					{
-						printf("ret== -1 at line %d",__LINE__);
-						exit(1);
-					}
-
-					printf("send return %d @2\n",ret);
-				}
-			}*/
 			exit(0);
 		}
 		else
